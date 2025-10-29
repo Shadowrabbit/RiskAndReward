@@ -1,0 +1,13 @@
+{
+  "LIB_NAMESPACE": "RabiConfigLib",
+  "NAME_SPACE_NAME": "RiskAndReward",
+  "GROUP_MARK": "*",
+  "DEF_MARK": "DefName",
+  "ANNOTATE_MARK": "Annotate",
+  "MANIFEST_PATH": "./Excel/manifest.txt",
+  "XLSX_FOLDER": "./Excel",
+  "LANGUAGES_FOLDER": "./Languages",
+  "CODE_EXPORT_FOLDER": "../RiskAndReward",
+  "LANGUAGES_EXPORT_FOLDER": "",
+  "DATA_EXPORT_FOLDER": "../Assets/Game"
+}

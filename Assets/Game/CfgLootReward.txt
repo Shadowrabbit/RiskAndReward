@@ -1,0 +1,8 @@
+Standard|||1
+StandardChallenge|||1
+Custom|||1
+Easy|||1
+ExtraEasy|||1
+Hard|||1
+ExtraHard|||1
+Rage|||1
