@@ -1,8 +1,8 @@
+ExtraEasy|||0.85
+Easy|||0.95
 Standard|||1
-StandardChallenge|||1
+StandardChallenge|||1.1
+Hard|||1.15
+ExtraHard|||1.25
+Rage|||1.35
 Custom|||1
-Easy|||1
-ExtraEasy|||1
-Hard|||1
-ExtraHard|||1
-Rage|||1

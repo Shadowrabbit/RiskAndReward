@@ -62,7 +62,11 @@ public static class LootRewardPatch
     private static void ApplyFactorToInstance(object instance)
     {
         var factor = LootRewardFactorReader.GetCurrentRewardFactor();
-        if (Mathf.Approximately(factor, 1f)) return;
+        if (Mathf.Approximately(factor, 1f))
+        {
+            return;
+        }
+
         LootRewardQuantityScaler.TryScaleRandomCount(instance, "randomCount", factor);
         LootRewardQualityAdjuster.TryAdjustQualities(instance, "qualities", factor);
     }

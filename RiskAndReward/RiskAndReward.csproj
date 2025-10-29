@@ -38,8 +38,8 @@
             <Private>False</Private>
         </Reference>
         <Reference Include="RabiConfigLib">
-            <HintPath>..\..\RabiConfigLib\RabiConfigLib.dll</HintPath>
-            <Private>False</Private>
+          <HintPath>..\..\..\..\..\..\workshop\content\3167020\3595665378\RabiConfigLib.dll</HintPath>
+          <Private>False</Private>
         </Reference>
     </ItemGroup>
 

@@ -66,7 +66,6 @@ internal static class LootRewardLogger
         }
 
         logLines.Add($"  Sum: {afterSum:F3}");
-
         Debug.Log(string.Join("\n", logLines));
     }
 }

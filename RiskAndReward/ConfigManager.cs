@@ -47,7 +47,7 @@ namespace RiskAndReward
         public CsvReader? FindData(string cfgName)
         {
             if (_cfgName2CsvReader.TryGetValue(cfgName, out var data)) return data;
-            Debug.LogError($"can't find data. cfgName:{cfgName}");
+            Debug.LogError($"[RabiConfigLib] Can't find data. cfgName:{cfgName}");
             return null;
         }
 
@@ -60,7 +60,7 @@ namespace RiskAndReward
         {
             if (_cfgName2CsvReader.ContainsKey(cfgName))
             {
-                Debug.LogError($"repeatedly loaded table cfgName:{cfgName}");
+                Debug.LogError($"[RabiConfigLib] Repeatedly loaded table, cfgName:{cfgName}");
                 return;
             }
 
@@ -74,7 +74,7 @@ namespace RiskAndReward
         {
             if (string.IsNullOrEmpty(_modDirectory))
             {
-                Debug.LogError("mod目录路径为空，无法加载配置文件");
+                Debug.LogError("[RabiConfigLib] Mod directory path is empty. Failed to load config files");
                 return;
             }
 
@@ -86,11 +86,11 @@ namespace RiskAndReward
             var assetsPath = Path.Combine(_modDirectory, "Assets");
             if (!Directory.Exists(assetsPath))
             {
-                Debug.LogError($"Assets目录不存在: {assetsPath}");
+                Debug.LogError($"[RabiConfigLib] Assets directory does not exist: {assetsPath}");
                 return;
             }
 
-            Debug.Log($"开始从mod目录加载配置文件: {_modDirectory}");
+            Debug.Log($"[RabiConfigLib] Start loading config files from mod directory: {_modDirectory}");
             var txtFiles = Directory.GetFiles(assetsPath, "*.txt", SearchOption.AllDirectories);
             foreach (var filePath in txtFiles)
             {
@@ -100,11 +100,11 @@ namespace RiskAndReward
                 }
                 catch (System.Exception ex)
                 {
-                    Debug.LogError($"加载配置文件失败: {filePath}, 错误: {ex.Message}");
+                    Debug.LogError($"[RabiConfigLib] Failed to load config file: {filePath}, error: {ex.Message}");
                 }
             }
 
-            Debug.Log($"配置文件加载完成，共加载 {txtFiles.Length} 个文件");
+            Debug.Log($"[RabiConfigLib] Completed loading config files, total {txtFiles.Length} files");
             GenerateConfigs();
         }
 
@@ -115,12 +115,12 @@ namespace RiskAndReward
         private void LoadTxtFile(string filePath)
         {
             var fileName = Path.GetFileNameWithoutExtension(filePath);
-            Debug.Log($"正在加载配置文件: {fileName}");
+            Debug.Log($"[RabiConfigLib] Loading config file: {fileName}");
             var fileContent = File.ReadAllText(filePath);
             var reader = new CsvReader();
             reader.LoadText(fileContent);
             InsertData(fileName, reader);
-            Debug.Log($"配置文件加载完成: {fileName}");
+            Debug.Log($"[RabiConfigLib] Config file loaded: {fileName}");
         }
     }
 }

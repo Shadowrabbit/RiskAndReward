@@ -11,13 +11,13 @@ namespace RiskAndReward.Defs
 {
     public static class DefLootReward
     {
+        public static readonly string DExtraEasy = "ExtraEasy"; 
+        public static readonly string DEasy = "Easy"; 
         public static readonly string DStandard = "Standard"; 
         public static readonly string DStandardChallenge = "StandardChallenge"; 
-        public static readonly string DCustom = "Custom"; 
-        public static readonly string DEasy = "Easy"; 
-        public static readonly string DExtraEasy = "ExtraEasy"; 
         public static readonly string DHard = "Hard"; 
         public static readonly string DExtraHard = "ExtraHard"; 
         public static readonly string DRage = "Rage"; 
+        public static readonly string DCustom = "Custom"; 
     }
 }
